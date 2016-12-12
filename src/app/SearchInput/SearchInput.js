@@ -27,7 +27,7 @@ export default class SearchInput extends React.Component {
 					<FormControl type="text" placeholder="Enter text" onChange={this.handleInputChange} />
 				</FormGroup>
 				
-				<Button type="submit">
+				<Button bsSize="large" bsStyle="primary" block type="submit">
 					Search
 				</Button>
 

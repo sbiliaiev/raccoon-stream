@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col, Panel } from 'react-bootstrap';
 import Header from './Header/Header';
 import SearchInput from './SearchInput/SearchInput';
 import ShowList from './ShowList/ShowList';
@@ -38,10 +38,24 @@ class App extends Component {
 		return (
 			<Grid>
 				<Row>
-					<Col md={12}><Header /></Col>
-					<Col md={12}><SearchInput onSearch={this.handleSearch}/></Col>
-					<Col md={12}><ShowList showList={this.state.showList} onClick={this.handleShowChoice} /></Col>
-					<Col md={12} style={{textAlign: 'center'}}><Player show={this.state.chosenShow} /></Col>
+					<Col md={12} sm={12} xs={12}><Header /></Col>
+				</Row>
+
+				<Row className="search-input">
+					<Col md={8} mdOffset={2} xs={12} sm={10} smOffset={1}
+						style={{textAlign: 'center'}}>
+						<SearchInput onSearch={this.handleSearch}/>
+					</Col>
+				</Row>
+				
+				<Row className="player">
+					<Col md={12}><Player show={this.state.chosenShow} /></Col>
+				</Row>
+
+				<Row className="show-list">
+					<Col md={12}>
+						<ShowList showList={this.state.showList} onClick={this.handleShowChoice} />
+					</Col>
 				</Row>
 			</Grid>
 		);

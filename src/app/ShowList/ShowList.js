@@ -3,15 +3,11 @@ import { Table } from 'react-bootstrap';
 import './ShowList.css';
 
 export default class ShowList extends React.Component {
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
 		const shows = this.props.showList;
 		if (shows.length > 0) {
 			return(
-				<Table responsive hover>
+				<Table hover>
 					<thead>
 						<tr>
 							<th>#</th>
